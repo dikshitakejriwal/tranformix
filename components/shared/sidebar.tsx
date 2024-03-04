@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from '../ui/button'
 
 
-const sidebar = () => {
+const Sidebar = () => {
   const pathname = usePathname();
   return (
     <aside className='sidebar'>
@@ -77,4 +77,4 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar;
