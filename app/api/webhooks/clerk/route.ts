@@ -57,9 +57,18 @@ export async function POST(req: Request) {
   const { id } = evt.data;
   const eventType = evt.type;
 
+  // interface UserCreatedEvent {
+  //   id: string;
+  //   email_addresses: Array<{ email_address: string }>;
+  //   image_url: string;
+  //   first_name: string;
+  //   last_name: string;
+  //   username: string;
+  // }
+
   // CREATE
   if (eventType === "user.created") {
-    const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+    const { id, email_addresses, image_url, first_name, last_name, username } = evt.data as UserCreatedEvent;
 
     const user = {
       clerkId: id,
